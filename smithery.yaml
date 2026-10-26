@@ -1,0 +1,19 @@
+# Smithery configuration for Pantheon-10K
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      pantheonOrigin:
+        type: string
+        title: "Pantheon Gateway Origin"
+        description: "Edge gateway endpoint for the Pantheon-10K swarm (defaults to production)."
+        default: "https://pantheon-10k.pseudonyx43.workers.dev"
+  commandFunction: |-
+    (config) => ({
+      command: "node",
+      args: ["packages/mcp/dist/index.js"],
+      env: {
+        PANTHEON_ORIGIN: config?.pantheonOrigin || "https://pantheon-10k.pseudonyx43.workers.dev"
+      }
+    })
