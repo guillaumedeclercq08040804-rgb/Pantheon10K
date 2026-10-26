@@ -1,0 +1,24 @@
+# Node dependencies
+node_modules/
+packages/*/node_modules/
+extension/node_modules/
+
+# Cloudflare Wrangler build & secrets
+.wrangler/
+
+# Agent local private keys and stamp cache
+.pantheon10k.json
+
+# Build outputs
+extension/out/
+extension/*.vsix
+
+# Scratch scripts, temporary files, logs
+scratch/
+*.log
+
+# OS & Environment
+.DS_Store
+Thumbs.db
+.env
+.env.*

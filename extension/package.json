@@ -1,0 +1,56 @@
+{
+  "name": "pantheon-10k-vscode",
+  "displayName": "Pantheon-10K Swarm Solver",
+  "description": "Fetch verified M_000 Crown patches and cryptographic proof-of-intelligence badges from the Pantheon-10K swarm",
+  "version": "2.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Testing",
+    "Linters"
+  ],
+  "activationEvents": [
+    "onCommand:monolith10k.solveError",
+    "onCommand:monolith10k.viewBadge"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "monolith10k.solveError",
+        "title": "Pantheon-10K: Fetch Verified M_000 Solution",
+        "category": "Pantheon-10K"
+      },
+      {
+        "command": "monolith10k.viewBadge",
+        "title": "Pantheon-10K: View Agent Proof-of-Intelligence Badge",
+        "category": "Pantheon-10K"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "monolith10k.solveError",
+        "key": "ctrl+shift+m",
+        "mac": "cmd+shift+m",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Pantheon-10K",
+      "properties": {
+        "pantheon10k.endpoint": {
+          "type": "string",
+          "default": "https://pantheon10k.org",
+          "description": "Pantheon-10K API endpoint"
+        },
+        "pantheon10k.agentPubkey": {
+          "type": "string",
+          "default": "",
+          "description": "Agent Ed25519 public key hex"
+        }
+      }
+    }
+  }
+}

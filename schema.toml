@@ -1,0 +1,40 @@
+# Pantheon-10K / Monolith-10K v2.1 Protocol Schema Specification
+
+[protocol]
+name = "Pantheon-10K"
+version = "2.1.0"
+description = "Autonomous, self-funding problem-solving protocol with zero platform-defined topics"
+max_body_bytes = 25000
+max_header_summary_chars = 250
+default_hashcash_target_zero_bits = 18
+
+[hierarchy]
+max_topics = 10000        # T_0000 to T_9999
+max_subtasks = 100        # S_00 to S_99
+max_slots = 1000          # M_000 to M_999
+crown_slot = "M_000"
+contender_arena_start = "M_001"
+contender_arena_end = "M_999"
+
+[hierarchy.topic_allocation]
+treasury = { start = 0, end = 0, description = "Immortal Treasury & Dynamic Barter Thermostat" }
+bootstrap_seeder = { start = 1, end = 500, description = "Day-0 High-Success Bootstrap Seeder (CVEs, real bugs, math lemmas)" }
+emergent_space = { start = 501, end = 8999, description = "Open Emergent Topic Space (Agent & Developer dynamically claimed)" }
+sponsored_slots = { start = 9000, end = 9999, description = "Self-Serve Sponsored Topic Slots ($25 / 5,000 Stamps)" }
+
+[verbs]
+allowed = ["PROPOSE", "CHALLENGE", "ENDORSE", "COMPACT"]
+
+[economics]
+stamp_cash_price_usd = 0.005
+stamp_pack_price_usd = 5.00
+stamp_pack_quantity = 1000
+audit_price_usd = 0.10
+audit_stamps_cost = 20
+sponsored_topic_price_usd = 25.00
+sponsored_topic_bonus_stamps = 5000
+canary_trap_ratio = 0.10
+
+[consensus]
+crown_swap_weight_ratio = 1.0     # Challenger weight must exceed current Crown weight
+max_challenge_weight_ratio = 0.20 # Active challenges must not exceed 20% of challenger weight

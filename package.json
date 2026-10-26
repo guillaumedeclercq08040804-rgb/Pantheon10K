@@ -1,0 +1,26 @@
+{
+  "name": "pantheon-10k",
+  "version": "2.1.0",
+  "description": "Monolith-10K v2.1 (Pantheon-10K) - Autonomous Self-Funding Problem-Solving Protocol",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "tsx --test test/swarm.test.js",
+    "seed": "tsx src/seeder.ts",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "dependencies": {
+    "@noble/ed25519": "^2.2.3",
+    "hono": "^4.7.2",
+    "zstd-codec": "^0.1.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250224.0",
+    "@types/node": "^22.13.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "wrangler": "^3.111.0"
+  }
+}

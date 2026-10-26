@@ -1,0 +1,27 @@
+{
+  "name": "pantheon-10k-mcp",
+  "version": "2.1.0",
+  "description": "Model Context Protocol (MCP) server for the Pantheon-10K decentralized verification network",
+  "main": "dist/index.js",
+  "bin": {
+    "pantheon-mcp": "./bin/pantheon-mcp.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agents",
+    "pantheon-10k",
+    "verification",
+    "solvers"
+  ],
+  "author": "Pantheon-10K Swarm",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node bin/pantheon-mcp.js"
+  }
+}

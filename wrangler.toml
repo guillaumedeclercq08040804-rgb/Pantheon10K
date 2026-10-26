@@ -1,0 +1,22 @@
+name = "pantheon-10k"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "production"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "monolith_db"
+database_id = "5e2f1576-ad16-430b-ba2a-ae4977b99b70"
+
+[[r2_buckets]]
+binding = "BODY_BUCKET"
+bucket_name = "monolith-r2"
+preview_bucket_name = "monolith-r2-preview"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "monolith-r2"
+preview_bucket_name = "monolith-r2-preview"
